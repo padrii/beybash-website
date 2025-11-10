@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+    <title>Services — Beybash Mining and Construction</title>
+    <meta name="description" content="Discover Beybash Mining & Construction services: building works, road projects, demolition, materials supply, and more for clients across Tanzania.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html">
+                <img src="assets/logo.svg" alt="Beybash Logo" class="logo">
+                <span class="brand-name">Beybash Mining & Construction</span>
+            </a>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" id="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="contact.html" class="btn btn-primary">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero services-hero">
+            <div class="container hero-inner">
+                <div class="hero-copy">
+                    <h1>Complete Support for Construction and Mining</h1>
+                    <p>We partner with clients through every project stage—providing materials, managing construction, and delivering safe demolition with a focus on quality and compliance.</p>
+                    <div class="hero-cta">
+                        <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+                        <a href="projects.html" class="btn btn-outline">View Our Work</a>
+                    </div>
+                </div>
+                <div class="hero-art">
+                    <img src="assets/loading.jpg" alt="Materials being loaded - Beybash">
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Our Services</h2>
+                    <p>We combine experienced teams, reliable supply chains, and modern equipment to deliver results you can count on.</p>
+                </div>
+                <div class="cards">
+                    <article class="card">
+                        <h3>Building Construction</h3>
+                        <p>Full construction services for residential, commercial, and industrial developments.</p>
+                        <ul>
+                            <li>Design-build and project management</li>
+                            <li>Structural, finishing, and MEP coordination</li>
+                            <li>Quality and safety compliance</li>
+                        </ul>
+                    </article>
+                    <article class="card">
+                        <h3>Road Works</h3>
+                        <p>Construction and maintenance of roads for public and private sector clients.</p>
+                        <ul>
+                            <li>Earthworks and subgrade preparation</li>
+                            <li>Base, sub-base, and surfacing</li>
+                            <li>Drainage and road furniture</li>
+                        </ul>
+                    </article>
+                    <article class="card">
+                        <h3>Architectural Design</h3>
+                        <p>Architectural design services tailored for new builds, renovations, and adaptive reuse.</p>
+                        <ul>
+                            <li>Concept and schematic design</li>
+                            <li>Construction drawings</li>
+                            <li>Authority coordination</li>
+                        </ul>
+                    </article>
+                    <article class="card">
+                        <h3>Building Materials Supply</h3>
+                        <p>Approved suppliers of aggregates, sand, cement, and other essential materials.</p>
+                        <ul>
+                            <li>Granite aggregates (1/2&quot; and 3/4&quot;), crushed rock</li>
+                            <li>Asphalt aggregates, river sand, and cement</li>
+                            <li>Bulk and scheduled deliveries</li>
+                        </ul>
+                    </article>
+                    <article class="card">
+                        <h3>Demolition &amp; Site Preparation</h3>
+                        <p>Safe demolition services with full waste handling, readying sites for the next build.</p>
+                        <ul>
+                            <li>Risk assessments and method statements</li>
+                            <li>Dust, noise, and waste control</li>
+                            <li>Recycling and recovery where feasible</li>
+                        </ul>
+                    </article>
+                    <article class="card">
+                        <h3>Home Decorations</h3>
+                        <p>Interior and exterior finishing works to deliver high-quality, comfortable spaces.</p>
+                        <ul>
+                            <li>Windows and balcony installations</li>
+                            <li>Air conditioning selection and installation</li>
+                            <li>Bespoke interior detailing</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>© <span id="year"></span> Beybash Mining and Construction. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+        const navLinks = mainNav ? mainNav.querySelectorAll('a') : [];
+
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenuToggle.classList.toggle('active');
+                mainNav.classList.toggle('active');
+                document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuToggle.classList.remove('active');
+                    mainNav.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                if (mainNav.classList.contains('active') && 
+                    !mainNav.contains(e.target) && 
+                    !mobileMenuToggle.contains(e.target)) {
+                    mobileMenuToggle.classList.remove('active');
+                    mainNav.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+
+        if (mainNav) {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            navLinks.forEach(link => {
+                if (link.classList.contains('btn')) return;
+                const target = link.getAttribute('href');
+                if (!target) return;
+                const normalizedTarget = target.split('#')[0];
+                const isHome = normalizedTarget === 'index.html' && (currentPage === '' || currentPage === 'index.html');
+                const matches = normalizedTarget === currentPage;
+                if (matches || isHome) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+

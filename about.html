@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+    <title>About Beybash Mining and Construction</title>
+    <meta name="description" content="Learn about Beybash Mining & Construction Ltd, our mission, safety standards, and the team that delivers reliable projects across Tanzania.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html">
+                <img src="assets/logo.svg" alt="Beybash Logo" class="logo">
+                <span class="brand-name">Beybash Mining & Construction</span>
+            </a>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" id="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="contact.html" class="btn btn-primary">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero about-hero">
+            <div class="container hero-inner">
+                <div class="hero-copy">
+                    <h1>Building with Safety, Quality, and Trust</h1>
+                    <p>Since our founding in Tanzania, Beybash Mining & Construction has helped clients realise complex projects with rigorous safety practices, reliable delivery, and hands-on leadership.</p>
+                </div>
+                <div class="hero-art">
+                    <img src="assets/excavator1.jpg" alt="Excavator on site - Beybash">
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="about-overview">
+            <div class="container">
+                <div class="section-head">
+                    <h2>About Beybash</h2>
+                    <p>Beybash Mining & Construction Ltd is a Tanzanian-registered company providing end-to-end support for mining and infrastructure projects: from sourcing materials to executing works and delivering safe demolition.</p>
+                </div>
+                <div class="features">
+                    <div class="feature">
+                        <h3>Safety First</h3>
+                        <p>We embed HSE standards in every activity—from site inductions to equipment maintenance—keeping teams, partners, and communities protected.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>On-Time Delivery</h3>
+                        <p>Our logistics network and project managers maintain dependable schedules to help clients stay on programme and budget.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Proven Quality</h3>
+                        <p>Experienced supervisors and certified suppliers ensure our workmanship and materials consistently meet industry benchmarks.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Why Clients Choose Us</h2>
+                    <p>We coordinate multidisciplinary teams, specialist subcontractors, and vetted suppliers to deliver a complete solution for each project.</p>
+                </div>
+                <div class="cards">
+                    <article class="card">
+                        <h3>Experienced Team</h3>
+                        <p>Our engineers, quantity surveyors, and supervisors combine local insight with international construction standards.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Integrated Services</h3>
+                        <p>We cover planning, procurement, construction, demolition, and rehabilitation—removing handover gaps.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Community Commitment</h3>
+                        <p>We collaborate with local communities, prioritising Tanzanian talent and suppliers whenever possible.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>© <span id="year"></span> Beybash Mining and Construction. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+        const navLinks = mainNav ? mainNav.querySelectorAll('a') : [];
+
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenuToggle.classList.toggle('active');
+                mainNav.classList.toggle('active');
+                document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuToggle.classList.remove('active');
+                    mainNav.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                if (mainNav.classList.contains('active') && 
+                    !mainNav.contains(e.target) && 
+                    !mobileMenuToggle.contains(e.target)) {
+                    mobileMenuToggle.classList.remove('active');
+                    mainNav.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+
+        if (mainNav) {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            navLinks.forEach(link => {
+                if (link.classList.contains('btn')) return;
+                const target = link.getAttribute('href');
+                if (!target) return;
+                const normalizedTarget = target.split('#')[0];
+                const isHome = normalizedTarget === 'index.html' && (currentPage === '' || currentPage === 'index.html');
+                const matches = normalizedTarget === currentPage;
+                if (matches || isHome) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+

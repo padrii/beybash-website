@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+    <title>Beybash Mining and Construction — Tanzania</title>
+    <meta name="description" content="Beybash Mining and Construction: material supply, construction works, and professional demolition services in Tanzania.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html">
+                <img src="assets/logo.svg" 
+                     alt="Beybash Logo" 
+                     class="logo"
+                     onerror="this.style.display='none'"
+                     onload="this.style.display='block'">
+                <span class="brand-name">Beybash Mining & Construction</span>
+            </a>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" id="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="contact.html" class="btn btn-primary">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero-inner">
+                <div class="hero-copy">
+                    <h1>Excellence in Material Supply, Construction and Demolition</h1>
+                    <p>Beybash Mining and Construction is a Tanzanian company providing material supply for construction and mining, delivering construction works, and professional demolition services to international standards.</p>
+                    <div class="hero-cta">
+                        <a href="services.html" class="btn btn-primary">View Services</a>
+                        <a href="contact.html" class="btn btn-outline">Contact Us</a>
+                    </div>
+                </div>
+                <div class="hero-art">
+                    <img src="assets/excavator1.jpg" 
+                         alt="Excavator working on site - Bebybash"
+                         onerror="handleImageError(this)"
+                         onload="handleImageLoad(this)">
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-head">
+                    <h2>What We Do</h2>
+                    <p>Discover Beybash services and see how we support construction and mining projects across Tanzania.</p>
+                </div>
+                <div class="cards link-cards">
+                    <a class="card card-link" href="about.html">
+                        <h3>About Beybash</h3>
+                        <p>Get to know our mission, safety priorities, and proven delivery record.</p>
+                        <span class="card-cta">Learn more →</span>
+                    </a>
+                    <a class="card card-link" href="services.html">
+                        <h3>Our Services</h3>
+                        <p>Explore the full range of construction, demolition, and material supply solutions we offer.</p>
+                        <span class="card-cta">View services →</span>
+                    </a>
+                    <a class="card card-link" href="projects.html">
+                        <h3>Featured Projects</h3>
+                        <p>See selected projects that highlight our capability and commitment to quality.</p>
+                        <span class="card-cta">View projects →</span>
+                    </a>
+                    <a class="card card-link" href="contact.html">
+                        <h3>Contact Us</h3>
+                        <p>Talk to our team for quotations, partnerships, or support on your upcoming work.</p>
+                        <span class="card-cta">Get in touch →</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Photo Gallery</h2>
+                    <p>Take a quick look at our equipment, logistics, and field operations in action.</p>
+                </div>
+                <div class="gallery-grid">
+                    <figure class="gallery-item">
+                        <img src="assets/excavator1.jpg" 
+                             alt="Excavator moving earth - Beybash"
+                             onerror="handleImageError(this)"
+                             onload="handleImageLoad(this)">
+                        <figcaption>Excavator at work on site</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="assets/gari1.jpg" 
+                             alt="Beybash project vehicle"
+                             onerror="handleImageError(this)"
+                             onload="handleImageLoad(this)">
+                        <figcaption>Fleet vehicle ready for deployment</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="assets/loading.jpg" 
+                             alt="Loading aggregates onto a truck"
+                             onerror="handleImageError(this)"
+                             onload="handleImageLoad(this)">
+                        <figcaption>Loading aggregates for delivery</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="assets/koko.jpg" 
+                             alt="Aggregates prepared for supply"
+                             onerror="handleImageError(this)"
+                             onload="handleImageLoad(this)">
+                        <figcaption>Aggregates staged for supply</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="assets/logo.svg" 
+                             alt="Beybash Mining & Construction logo"
+                             onerror="handleImageError(this)"
+                             onload="handleImageLoad(this)">
+                        <figcaption>Beybash Mining & Construction logo</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>© <span id="year"></span> Beybash Mining and Construction. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Image error handler - simple and effective
+        function handleImageError(img) {
+            img.style.display = 'none';
+            if (img.parentElement) {
+                img.parentElement.classList.add('placeholder');
+            }
+        }
+
+        // Image load handler - ensure image is visible
+        function handleImageLoad(img) {
+            img.style.display = 'block';
+            img.style.opacity = '1';
+            if (img.parentElement) {
+                img.parentElement.classList.remove('placeholder');
+            }
+        }
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+        const navLinks = mainNav.querySelectorAll('a');
+
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenuToggle.classList.toggle('active');
+                mainNav.classList.toggle('active');
+                document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
+            });
+
+            // Close menu when clicking on a link
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuToggle.classList.remove('active');
+                    mainNav.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (mainNav.classList.contains('active') && 
+                    !mainNav.contains(e.target) && 
+                    !mobileMenuToggle.contains(e.target)) {
+                    mobileMenuToggle.classList.remove('active');
+                    mainNav.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+
+        // Highlight active navigation link based on current page
+        if (mainNav) {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            navLinks.forEach(link => {
+                if (link.classList.contains('btn')) return;
+                const target = link.getAttribute('href');
+                if (!target) return;
+                const normalizedTarget = target.split('#')[0];
+                const isHome = normalizedTarget === 'index.html' && (currentPage === '' || currentPage === 'index.html');
+                const matches = normalizedTarget === currentPage;
+                if (matches || isHome) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
+        if (window.location.protocol === 'file:') {
+            const warning = document.getElementById('form-warning');
+            const notice = document.getElementById('form-notice');
+            const form = document.querySelector('.contact-form');
+
+            if (warning) warning.hidden = false;
+            if (notice) notice.hidden = false;
+            if (form) {
+                form.addEventListener('submit', (event) => {
+                    event.preventDefault();
+                    alert('To send this form, please open the site through a local or hosted web server (for example run "python -m http.server" and visit http://localhost:8000).');
+                });
+            }
+        }
+    </script>
+</body>
+</html>
+
+

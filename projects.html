@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+    <title>Projects — Beybash Mining and Construction</title>
+    <meta name="description" content="View selected Beybash Mining & Construction projects showcasing experience in infrastructure, demolition, and material supply across Tanzania.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html">
+                <img src="assets/logo.svg" alt="Beybash Logo" class="logo">
+                <span class="brand-name">Beybash Mining & Construction</span>
+            </a>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" id="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="contact.html" class="btn btn-primary">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero projects-hero">
+            <div class="container hero-inner">
+                <div class="hero-copy">
+                    <h1>Delivering Results Across Tanzania</h1>
+                    <p>From industrial facilities to demolition and material supply, our portfolio highlights the scale and reliability Beybash clients rely on.</p>
+                    <div class="hero-cta">
+                        <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+                        <a href="services.html" class="btn btn-outline">Our Services</a>
+                    </div>
+                </div>
+                <div class="hero-art">
+                    <img src="assets/gari1.jpg" alt="Beybash project vehicle">
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Featured Projects</h2>
+                    <p>A snapshot of selected works we have delivered for private and public clients.</p>
+                </div>
+                <div class="projects">
+                    <div class="project">
+                        <div class="project-thumb">
+                            <img src="assets/gari1.jpg" alt="Construction of a recycling plant">
+                        </div>
+                        <div class="project-info">
+                            <h3>Recycling Plant Construction</h3>
+                            <p>End-to-end construction of an industrial recycling facility in Dar es Salaam, including structural works and commissioning.</p>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <div class="project-thumb">
+                            <img src="assets/loading.jpg" alt="Loading aggregates for Kimbiji project">
+                        </div>
+                        <div class="project-info">
+                            <h3>Kimbiji Integrated Works</h3>
+                            <p>Construction, demolition, and consistent material supply for a multi-phase development in Kimbiji, Dar es Salaam Region.</p>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <div class="project-thumb">
+                            <img src="assets/koko.jpg" alt="Aggregates supply in Dar es Salaam">
+                        </div>
+                        <div class="project-info">
+                            <h3>Mine Site Material Supply</h3>
+                            <p>Ongoing delivery of aggregates, cement, and reinforcement steel to support mining operations in Dar es Salaam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>© <span id="year"></span> Beybash Mining and Construction. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+        const navLinks = mainNav ? mainNav.querySelectorAll('a') : [];
+
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenuToggle.classList.toggle('active');
+                mainNav.classList.toggle('active');
+                document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuToggle.classList.remove('active');
+                    mainNav.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                if (mainNav.classList.contains('active') && 
+                    !mainNav.contains(e.target) && 
+                    !mobileMenuToggle.contains(e.target)) {
+                    mobileMenuToggle.classList.remove('active');
+                    mainNav.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+
+        if (mainNav) {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            navLinks.forEach(link => {
+                if (link.classList.contains('btn')) return;
+                const target = link.getAttribute('href');
+                if (!target) return;
+                const normalizedTarget = target.split('#')[0];
+                const isHome = normalizedTarget === 'index.html' && (currentPage === '' || currentPage === 'index.html');
+                const matches = normalizedTarget === currentPage;
+                if (matches || isHome) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+
